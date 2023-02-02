@@ -1,0 +1,22 @@
+.button {
+  background: #faba54;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background: #ff9d00;
+  transform: translate(0, -4px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: translate(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
