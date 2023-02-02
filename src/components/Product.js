@@ -1,18 +1,27 @@
 import React from "react";
 import Button from "../UI/Button";
 import classes from "./Product.module.css";
-const Product = () => {
+const Product = ({ id, title, name, price, rating, image }) => {
   return (
     <div className={classes["product"]}>
       <div className={classes["product__info"]}>
-        <p>Title</p>
-        <p className={classes["product__price"]}>30$</p>
-        <div className={classes["product__rating"]}>⭐⭐⭐⭐⭐</div>
+        <p>{title}</p>
+        <p className={classes["product__price"]}>
+          <span>Price: </span>
+          <strong>${price}</strong>
+        </p>
+        <div className={classes["product__rating"]}>
+          <span>Rating:</span>
+          <strong className={classes["product__rating"]}>
+            {Array(rating)
+              .fill()
+              .map(() => (
+                <p>⭐</p>
+              ))}
+          </strong>
+        </div>
       </div>
-      <img
-        src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-        alt="Hand Watch"
-      />
+      <img src={image} alt="Hand Watch" />
       <Button>Add to cart</Button>
     </div>
   );
